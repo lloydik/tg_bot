@@ -12,7 +12,7 @@ RUN apt-get install -y iproute2
 RUN mkdir /oracle
 RUN mkdir /oracle/pg_data
 RUN mkdir /oracle/pg_data/archive
-RUN chown -R postgres:postgres/oracle/pg_data/archive
+RUN chown -R postgres:postgres /oracle/pg_data/archive
 RUN echo "PermitRootLogin yes" >> /etc/ssh/sshd_config
 RUN echo 'root:admin' | chpasswd
 RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
