@@ -1,0 +1,30 @@
+- name: Start Bot
+  hosts: all    # playbook запустится для всех хостов в inventory.
+  become: yes   # команда позволяет ansible использовать права root.
+
+  tasks:        # ниже начинается список задач. Обратите внимание, tasks во множественном числе. Иначе получим ошибку при выполнении плейбука
+
+  - name: Git Clone
+    git:
+      repo: https://github.com/lloydik/tg_bot.git
+      dest: /app
+      clone: yes
+      update: yes
+      version: docker
+
+  - name: Copy .env file
+    copy:
+      src: /app/.env
+      dest: /app/bot/.env
+
+  - name: Build Image
+    become: True
+    shell:
+      cmd: "docker build -t db_image ./db && docker build -t db_repl_image ./replication && docker build -t bot_image ./bot"
+      chdir: /app/
+
+  - name: Run Bot
+    become: True
+    shell:
+      cmd: "docker compose up -d"
+      chdir: /app/
