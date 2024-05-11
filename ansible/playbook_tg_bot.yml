@@ -14,7 +14,7 @@
 
   - name: Copy .env file
     copy:
-      src: /app/.env
+      src: ../.env
       dest: /app/bot/.env
 
   - name: Build Image
