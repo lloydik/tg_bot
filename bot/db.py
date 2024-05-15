@@ -36,6 +36,8 @@ class DBOperator:
             data = cursor.fetchall()
             logging.info(data)
             logging.info("Команда успешно выполнена")
+            if not data:
+                return "Нет данных"
             return data
              
         except (Exception, Error) as error:

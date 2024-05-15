@@ -34,6 +34,8 @@ class MonitorBot:
         #data = channels
         data = data.replace('\\n', '\n').replace('\\t', '\t')
         logging.debug(data)
+        if not data:
+            return "Нет данных"
         return data
 
     def get_release(self):
@@ -108,6 +110,6 @@ class MonitorBot:
         return self.get_output(res)
 
     def get_repl_logs(self):
-        res = self.client.exec_command('tail /var/log/postgresql/postgres*.log -n 10')
+        res = self.client.exec_command('tail /var/log/postgresql/postgres*.log | grep "repl"')
         logging.debug(res)
         return self.get_output(res)
