@@ -108,6 +108,6 @@ class MonitorBot:
         return self.get_output(res)
 
     def get_repl_logs(self):
-        res = self.client.exec_command('tail /var/log/postgresql/postgresql*.log -n 5')
+        res = self.client.exec_command('tail /var/log/postgresql/postgres*.log -n 10')
         logging.debug(res)
         return self.get_output(res)
