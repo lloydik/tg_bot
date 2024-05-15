@@ -13,8 +13,8 @@ logger = logging.getLogger(__name__)
 class DBOperator:
     def __init__(self):
         
-        dotenv_path = Path('.env')
-        load_dotenv(dotenv_path=dotenv_path)
+        # dotenv_path = Path('.env')
+        # load_dotenv(dotenv_path=dotenv_path)
 
         self.host = os.getenv('DB_HOST')
         self.port = os.getenv('DB_PORT')

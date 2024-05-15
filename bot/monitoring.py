@@ -15,8 +15,8 @@ logger = logging.getLogger(__name__)
 
 class MonitorBot:
     def __init__(self):
-        dotenv_path = Path('.env')
-        load_dotenv(dotenv_path=dotenv_path)
+        # dotenv_path = Path('.env')
+        # load_dotenv(dotenv_path=dotenv_path)
 
         self.host = os.getenv('RM_HOST')
         self.port = os.getenv('RM_PORT')

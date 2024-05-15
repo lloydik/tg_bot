@@ -2,6 +2,8 @@ version: '3.8'
 
 services:
   bot_image:
+    env_file:
+      - .env
     networks:
       - botnet
     image: bot_image
@@ -10,6 +12,8 @@ services:
       - db_repl_image
 
   db_image:
+    env_file:
+      - .env
     networks:
       - botnet
     restart: always
@@ -25,6 +29,8 @@ services:
     image: db_image
 
   db_repl_image:
+    env_file:
+      - .env
     networks:
       - botnet
     restart: always

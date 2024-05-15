@@ -11,8 +11,8 @@ from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, Conve
 
 
 
-dotenv_path = Path('.env')
-load_dotenv(dotenv_path=dotenv_path)
+# dotenv_path = Path('.env')
+# load_dotenv(dotenv_path=dotenv_path)
 
 TOKEN = os.getenv('TOKEN')
 # chat id 493569077
