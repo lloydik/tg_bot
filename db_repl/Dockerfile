@@ -11,5 +11,4 @@ ENV POSTGRES_PASSWORD=${DB_REPL_PASSWORD}
 
 USER postgres
 
-COPY init.sh /docker-entrypoint-initdb.d/init.sh
-# RUN pg_createcluster 16 mycluster
+COPY init.sh /docker-entrypoint-initdb.d/

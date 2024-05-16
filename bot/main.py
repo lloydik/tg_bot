@@ -15,7 +15,7 @@ from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, Conve
 # load_dotenv(dotenv_path=dotenv_path)
 
 TOKEN = os.getenv('TOKEN')
-# chat id 493569077
+
 # Подключаем логирование
 logging.basicConfig(
     filename='logfile.txt', format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO
@@ -98,7 +98,6 @@ def findEmails(update: Update, context):
         emails_array.append(emailList[i])
     update.message.reply_text(emails+'\nОтправьте "Да" (без кавычек) для того, чтобы записать email\'ы в БД') # Отправляем сообщение пользователю
     return "insertEmails"
-    # return ConversationHandler.END # Завершаем работу обработчика диалога
 
 def insertEmail(update: Update, context):
     logging.debug(emails_array)

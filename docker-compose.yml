@@ -49,6 +49,8 @@ services:
     ports:
       - 5433:5432
     build: ./db_repl
+    depends_on:
+      - db_image
 
 networks:
   botnet:
