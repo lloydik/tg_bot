@@ -2,15 +2,23 @@
 1. Создаём .env рядом с docker-compose.yml
 2. ```docker compose up --build -d```
 
-3. # Задание:
-4. # Создание функциональныx Telegram ботов
-
-# Цель:
-
-1. Освоить навыки программирования на практике.
-2. Научиться создавать функциональные Telegram боты.
-3. Закрепить навыки работы с регулярными выражениями.
-4. Закрепить опыт работы с Linux системами и сбора информации о них через SSH подключение.
+Пример .env
+```
+TOKEN=<bot token>
+RM_HOST=db_image
+RM_PORT=22
+RM_USER=root
+RM_PASSWORD=admin
+DB_USER=postgres
+DB_PASSWORD=password
+DB_HOST=db_image
+DB_PORT=5432
+DB_DATABASE=bot_db
+DB_REPL_USER=replicator
+DB_REPL_PASSWORD=replicator_password
+DB_REPL_HOST=db_repl_image
+DB_REPL_PORT=5432
+```
 
 # Задание:
 
